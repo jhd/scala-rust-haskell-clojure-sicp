@@ -37,7 +37,6 @@
 
 (defn decode [bits tree]
   (defn decode-1 [bits current-branch]
-    (println bits " : " current-branch)
     (if (= bits '())
       '()
       (let [next-branch (choose-branch (first bits)
@@ -82,7 +81,6 @@
                             (nthrest pairs 2)))))
 
 (defn generate-huffman-tree [freq-list]
-  (println freq-list)
   (successive-merge (make-leaf-set freq-list)))
 
 (defn -main []
